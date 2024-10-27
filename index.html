@@ -6,13 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>To-Do List App</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
     <div class="todo-container">
         <h1>To-Do List</h1>
         <div class="input-container">
             <input type="text" id="task-input" placeholder="Add a new task">
-            <button id="add-task-btn">Add Task</button>
+            <button id="add-task-btn" class="add-btn">Add Task</button>
         </div>
         <ul id="task-list"></ul>
     </div>
@@ -23,10 +24,17 @@
             <span class="close-modal">&times;</span>
             <h3>Edit Task</h3>
             <input type="text" id="edit-task-input" placeholder="Edit task">
-            <button id="save-task-btn">Save</button>
+            <button id="save-task-btn" class="add-btn">Save</button>
         </div>
     </div>
-
+<!-- Dark mode toggle -->
+    <div class="dark-mode-div">
+        <input type="checkbox" id="dark-mode-toggle" />
+        <label for="dark-mode-toggle">
+            <i class="fa-regular fa-sun sun-icon icon"></i>
+            <i class="fa-regular fa-moon moon-icon icon"></i>
+        </label>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

@@ -41,7 +41,7 @@ input[type="text"] {
     font-size: 16px;
 }
 
-button {
+.add-btn {
     padding: 10px 15px;
     background-color: #28a745;
     color: white;
@@ -50,7 +50,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.add-btn:hover {
     background-color: #218838;
 }
 
@@ -145,4 +145,108 @@ li.completed {
     right: 10px;
     cursor: pointer;
     font-size: 20px;
+}
+
+
+/* Styling the dark mode toggle */
+.dark-mode-div {
+    position: absolute;
+    top: 4%;
+    left: 85%;
+    width: 100px;
+    height: 50px;
+    background-color: lightgrey;
+    border-radius: 200px;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+    transition: background-color 0.5s;
+}
+
+.dark-mode-div input {
+    display: none; /* Hide the checkbox */
+}
+
+.dark-mode-div label {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(180deg, #ffcc89, #d8860b); /* Initial color for light mode */
+    border-radius: 50%;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: left 0.5s ease, background 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Common styles for both sun and moon icons */
+.icon {
+    text-align: center;
+    transition: opacity 0.5s ease;
+}
+
+.sun-icon {
+    opacity: 1; /* Sun is visible initially */
+    position: absolute;
+}
+
+.moon-icon {
+    opacity: 0; /* Moon is hidden initially */
+    position: absolute;
+}
+
+/* Dark mode when the input is checked */
+.dark-mode-div input:checked + label {
+    left: 55px; /* Move the circle to the right */
+    background: linear-gradient(180deg, #777, #3a3a3a); /* Darker background */
+}
+
+.dark-mode-div input:checked + label .sun-icon {
+    opacity: 0; /* Hide the sun icon */
+}
+
+.dark-mode-div input:checked + label .moon-icon {
+    opacity: 1; /* Show the moon icon */
+}
+
+
+/* Dark mode styling */
+body.dark-mode {
+    background-color: #212121;
+    color: #ddd;
+}
+
+body.dark-mode li {
+    background-color: #5f5f5f;
+}
+
+.todo-container.dark-mode {
+    background-color: #3a3a3a;
+    color: #ddd;
+}
+
+.todo-container.dark-mode h1 {
+    color: #ddd;
+}
+
+.todo-container.dark-mode input {
+    background-color: #5f5f5f;
+    color: #ddd;
+}
+
+.modal-content.dark-mode {
+    background-color: #3a3a3a;
+    color: #ddd;
+}
+
+.modal-content.dark-mode input {
+    background-color: #5f5f5f;
+    color: #ddd;
+}
+
+body.dark-mode li.completed {
+    text-decoration: line-through;
+    background-color: #2e2e2e;
 }
